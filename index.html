@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Imperial College London Charity Week</title>
+
+   <meta name="description" content="Website for the Imperial College Charity Week Campaign">
+   <meta name="keywords"
+      content="Imperial College London, Imperial, London, Charity, Charity Week, Islamic Relief, Donation, Imperial College, ISoc, Islamic Society, Imperial ISoc, Imperial College ISoc">
+
+   <!-- Font awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+   <!-- CSS  -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+   <link href="css/misc.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+   <!-- Icon -->
+   <link rel="shortcut icon" href="img/cw-logo-orange.ico" type="image/x-icon" />
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145411724-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145411724-1');
+   </script>
+
+   <style>
+      .image-text {
+         text-shadow: 1px 2px 8px #000;
+      }
+
+      .material-icons.active {
+         color: #1e88e5 !important;
+      }
+
+      /* label focus color */
+      .input-field input[type=text]:focus+label,
+      .input-field input[type=number]:focus+label,
+      .input-field input[type=email]:focus+label,
+      .materialize-textarea:focus:not([readonly])+label {
+         color: #1e88e5 !important;
+      }
+
+      /* label underline focus color */
+      .input-field input[type=text]:focus,
+      .input-field input[type=number]:focus,
+      .input-field input[type=email]:focus,
+      .materialize-textarea:focus:not([readonly]) {
+         border-bottom: 1px solid #1e88e5 !important;
+         box-shadow: 0 1px 0 0 #1e88e5 !important;
+      }
+   </style>
+
+</head>
+
+<body class="fade">
+
+   <!-- Navbar -->
+   <header class="nav">
+      <div class="navbar-fixed">
+         <nav class="nav-wrapper blue darken-1">
+            <div class="container">
+               <a class="brand-logo" href="./">
+                  <img class="responsive-image" style="height: 50px; margin-top: 5px;" src="img/cw-logo.png" alt="Logo">
+               </a>
+
+               <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                  <i class="material-icons white-text">menu</i>
+               </a>
+               <ul class="right hide-on-med-and-down valign-wrapper">
+                  <li><a class="white-text" href="https://www.imperialcharityweek.co.uk">Home</a></li>
+                  <li><a href="https://www.facebook.com/ImperialCW/"
+                        class="btn-floating transparent z-depth-0 waves-effect waves-light">
+                        <i class="fab fa-facebook"></i>
+                     </a></li>
+                  <li><a href="https://www.instagram.com/imperialcollegecw/"
+                        class="btn-floating transparent z-depth-0 waves-effect waves-light">
+                        <i class="fab fa-instagram"></i>
+                     </a></li>
+                  <li><a href="https://twitter.com/impcw"
+                        class="btn-floating transparent z-depth-0 waves-effect waves-light">
+                        <i class="fab fa-twitter"></i>
+                     </a></li>
+                  <li><a class="white-text btn orange darken-2 waves-effect waves-light"
+                        href="https://charityweek-schools.islamic-relief.org.uk/fundraising/imperial-college-charity-week-2021-auction-di"
+                        target="_blank">Donate</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+
+      <ul class="sidenav" id="mobile-menu">
+         <li><a class="sidenav-close" href="https://imperialcharityweek.co.uk">Home</a></li>
+         <li><a class="sidenav-close" href="https://www.facebook.com/ImperialCW/"><i
+                  class="black-text fab fa-facebook"></i></a>
+         </li>
+         <li><a class="sidenav-close" href="https://www.instagram.com/imperialcollegecw/"> <i
+                  class="black-text fab fa-instagram"></i></a></li>
+         <li><a class="sidenav-close" href="https://twitter.com/impcw"> <i class="black-text fab fa-twitter"></i></a>
+         </li>
+         <li><a class="sidenav-close"
+               href="https://charityweek-schools.islamic-relief.org.uk/fundraising/imperial-college-charity-week-2021-auction-di"
+               target="_blank">Donate</a>
+         </li>
+      </ul>
+   </header>
+
+   <main>
+
+      <!-- Form pop up -->
+      <div id="modal-form" class="modal">
+         <div class="modal-content">
+            <h4 id="modal-item-name">Item name</h4>
+            <p id="modal-item-amount">Current bid: £50</p>
+
+            <div class="input-field hide">
+               <input id="id" type="text" name="id" class="input" required>
+            </div>
+
+            <div class="input-field">
+               <i class="material-icons prefix">person</i>
+               <input id="name" type="text" name="name" class="input" required>
+               <label for="name">Full Name*</label>
+               <span id="name-helper" class="helper-text hide" data-error="Please fill in your name"></span>
+            </div>
+
+
+            <div class="input-field">
+               <i class="material-icons prefix">phone</i>
+               <input id="phone" type="number" name="phone" class="input" required>
+               <label for="phone">Phone number*</label>
+               <span id="phone-helper" class="helper-text hide" data-error="Please fill in your number"></span>
+            </div>
+
+            <div class="input-field">
+               <i class="material-icons prefix">email</i>
+               <input id="email" type="text" name="email" class="input" required>
+               <label for="email">Email*</label>
+               <span id="email-helper" class="helper-text hide" data-error="Please fill in your email"></span>
+            </div>
+
+            <div class="input-field">
+               <i class="fas fa-pound-sign prefix"></i>
+               <input id="amount" type="number" name="amount" class="input" required>
+               <label for="amount">Amount*</label>
+               <span id="amount-helper" class="helper-text hide" data-error="Please fill in the amount"></span>
+            </div>
+
+            <div class="input-field center" style="margin-top: 40px;">
+               <button class="btn orange darken-2 waves-effect waves-light" onclick="postBid();">Bid</button>
+            </div>
+         </div>
+      </div>
+
+
+      <!-- Items -->
+
+      <div class="container scrollspy" id="events" style="margin-bottom: 80px;">
+         <h3 class="header center blue-text text-darken-1" style="margin-top: 40px; margin-bottom: 30px;">Silent Auction
+         </h3>
+
+         <h6 class="center black-text text-darken-1" style="margin-top: 40px; margin-bottom: 30px;">
+            <b>SILENT AUCTION ENDS SUNDAY 11.59 PM</b>
+         </h6>
+         
+         <h6 class="center black-text text-darken-1" style="margin-top: 40px; margin-bottom: 30px;">For any
+            questions, please contact
+            <a class="email"
+               href="mailto:dinner@imperialcharityweek.co.uk?subject=Silent Auction">dinner@imperialcharityweek.co.uk</a>
+         </h6>
+
+         <div class="row fixed-height-row" id="item-cards"></div>
+      </div>
+
+
+
+      <!-- Scroll to top FAB -->
+      <div class="fixed-action-btn scale-transition scale-out scroll-to-top">
+         <a href="#top" class="btn-floating btn-large orange darken-2 waves-effect waves-light">
+            <i class="large material-icons">keyboard_arrow_up</i>
+         </a>
+      </div>
+
+      <div id="modal-success" class="modal">
+         <div class="modal-content">
+            <h4>Thank you</h4>
+            <p>Your bid has been successful</p>
+         </div>
+         <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+         </div>
+      </div>
+   </main>
+
+   <!-- Footer -->
+   <footer class="page-footer grey darken-3"></footer>
+
+   <!--  Scripts -->
+
+   <!-- External scripts -->
+   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+   <!-- Common scripts used for websites functionality -->
+   <script src='js/fab.js'></script>
+
+   <!-- Loads footer and materialized functions -->
+   <script>
+      $(document).ready(function () {
+         $(".input").keyup(function (event) {
+            if (event.keyCode === 13) {
+               postBid();
+            }
+         });
+         $(".page-footer").load("./html-sections/footer.html");
+         $('.modal').modal();
+         $('.sidenav').sidenav();
+
+         var requestURL = './items/items.json';
+         var request = new XMLHttpRequest();
+         request.open('GET', requestURL);
+         request.responseType = 'json';
+         request.send();
+
+         request.onload = function () {
+            console.log(request.response);
+            var response = request.response['items'];
+            var numItems = response.length;
+            for (var i = 0; i < numItems; i++) {
+               var item = response[i];
+
+               // Video items
+
+               if (i == -1) { // place id of video items here
+
+                  var line = `<div class="col s12 m12 auction-item l6 hide-on-small-only">
+               <div id="` + item["id"] + `" class="card hoverable" onclick="openModal('` + item["id"] + `');">
+                  <div class="card-image center">
+                     <video width="100%" height="600" loop controls> 
+                        <source src="./img/` + item["id"] + `.mp4">
+                        </video>
+                  </div>
+                  <div class="card-content">
+                     <div class="row">
+
+                        <span class="card-title col s9 l10"><b id="` + item["id"] + `name">` + item["name"] + `</b></span>
+                        <a class="btn col s3 l2 waves-effect waves-light orange darken-2">Bid</a>
+                     </div>
+                     <p style="margin-bottom: 40px;">` + item["description"] + `</p>
+
+                     <h6 id="` + item["id"] + `amount" style="position: absolute; bottom: 10px; margin-top: 10px;"></h6>
+
+                  </div>
+               </div>
+            </div>`;
+
+                  var lineSmall = `<div class="col s12 m12 auction-item l6 hide-on-med-and-up show-on-small-only">
+               <div id="` + item["id"] + `" class="card hoverable" onclick="openModal('` + item["id"] + `');">
+                  <div class="card-image center">
+                     <video width="100%" controls loop> 
+                        <source src="./img/` + item["id"] + `.mp4">
+                        </video>
+                  </div>
+                  <div class="card-content">
+                     <div class="row">
+
+                        <span class="card-title col s9 l10"><b id="` + item["id"] + `name">` + item["name"] + `</b></span>
+                        <a class="btn col s3 l2 waves-effect waves-light orange darken-2">Bid</a>
+                     </div>
+                     <p style="margin-bottom: 40px;">` + item["description"] + `</p>
+
+                     <h6 id="` + item["id"] + `mamount" style="position: absolute; bottom: 10px; margin-top: 10px;"></h6>
+
+                  </div>
+               </div>
+            </div>`;
+
+
+               }
+               else {
+                  // Standard items
+                  var line = `<div class="col s12 m12 auction-item l6 hide-on-small-only ">
+               <div id="` + item["id"] + `" class="card hoverable" onclick="openModal('` + item["id"] + `');">
+                  <div class="card-image">
+                     <img src="./img/` + item["id"] + `.jpeg"
+                        alt="` + item["name"] + `"width="400" height="600">
+                  </div>
+                  <div class="card-content">
+                     <div class="row">
+
+                        <span class="card-title col s9 l10"><b id="` + item["id"] + `name">` + item["name"] + `</b></span>
+                        <a class="btn col s3 l2 waves-effect waves-light orange darken-2">Bid</a>
+                     </div>
+                     <p style="margin-bottom: 40px;">` + item["description"] + `</p>
+
+                     <h6 id="` + item["id"] + `amount" style="position: absolute; bottom: 10px; margin-top: 10px;"></h6>
+
+                  </div>
+               </div>
+            </div>`;
+
+                  var lineSmall = `<div class="col s12 m12 auction-item l6 hide-on-med-and-up show-on-small-only ">
+               <div id="` + item["id"] + `" class="card hoverable" onclick="openModal('` + item["id"] + `');">
+                  <div class="card-image">
+                     <img src="./img/` + item["id"] + `.jpeg"
+                        alt="` + item["name"] + `class="responsive-img">
+                  </div>
+                  <div class="card-content">
+                     <div class="row">
+
+                        <span class="card-title col s9 l10"><b id="` + item["id"] + `name">` + item["name"] + `</b></span>
+                        <a class="btn col s3 l2 waves-effect waves-light orange darken-2">Bid</a>
+                     </div>
+                     <p style="margin-bottom: 40px;">` + item["description"] + `</p>
+
+                     <h6 id="` + item["id"] + `mamount" style="position: absolute; bottom: 10px; margin-top: 10px;"></h6>
+
+                  </div>
+               </div>
+            </div>`;
+
+               }
+               //line is for medium and large screens, linesmall is for small screens (mobile)
+               $("#item-cards").append(line);
+               $("#item-cards").append(lineSmall);
+            }
+            getAmounts(true);
+         }
+
+         setTimeout(function () { document.body.className = ''; }, 300);
+
+      });
+   </script>
+
+   <script>
+
+      function updateAmounts(data) {
+         for (var i = 1; i < 20; i++) {
+            if (i != 8) {
+               document.getElementById(i + 'amount').innerHTML = "Current bid: £" + parseFloat(data[i - 1]["amount"]).toFixed(2);
+               document.getElementById(i + 'mamount').innerHTML = "Current bid: £" + parseFloat(data[i - 1]["amount"]).toFixed(2);
+            }
+         }
+         document.getElementById('modal-item-amount').innerHTML = document.getElementById(document.getElementById('id').value + "amount").innerHTML;
+
+      }
+      function getAmounts(repeat) {
+         $.ajax({
+            url: "https://auction.imperialcharityweek.co.uk/endpoints/get-amount.php",
+            type: "get",
+            data: {
+               id: 1
+            },
+            success: function (response) {
+               console.log(response);
+               updateAmounts(JSON.parse(response));
+               if (repeat) {
+                  setTimeout(getAmounts, 5000, true)
+               }
+            },
+            error: function (xhr) {
+               console.log(response);
+            }
+         });
+      }
+      function openModal(id) {
+         $('#modal-form').modal('open');
+         getAmounts(false);
+         document.getElementById("id").value = id;
+         document.getElementById('modal-item-name').innerHTML = document.getElementById(id + "name").innerHTML;
+         document.getElementById('modal-item-amount').innerHTML = document.getElementById(id + "amount").innerHTML;
+      }
+
+      function validate(id, name, phone, email, amount) {
+
+         var status = true;
+
+         if (isNaN(id)) {
+            alert("An error has occurred");
+            status = false;
+         }
+
+         if (name == "") {
+            $("#name").addClass("invalid");
+            $("#name-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         if (amount == "") {
+            $("#amount-helper").attr("data-error", "Please enter an amount");
+            $("#amount").addClass("invalid");
+            $("#amount-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         if (phone == "") {
+            $("#phone-helper").attr("data-error", "Please enter a phone number");
+            $("#phone").addClass("invalid");
+            $("#phone-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         if (isNaN(phone)) {
+            $("#phone-helper").attr("data-error", "Please use a phone number");
+            $("#phone").addClass("invalid");
+            $("#phone-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         const email_regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+         if (!email_regex.test(email)) {
+            $("#email-helper").attr("data-error", "Please enter a valid email");
+            $("#email").addClass("invalid");
+            $("#email-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         if (isNaN(amount)) {
+            $("#amount-helper").attr("data-error", "Please use a number");
+            $("#amount").addClass("invalid");
+            $("#amount-helper").removeClass("hide");
+
+            status = false;
+         }
+
+         return status;
+      }
+
+      function clearForm() {
+         $('.input').val('');
+         $('.input').next().removeClass('active');
+         $(".input").removeClass("invalid");
+         $(".helper-text").addClass("hide");
+      }
+
+      function postBid() {
+         $(".input").removeClass("invalid");
+         $(".helper-text").addClass("hide");
+
+         id = document.getElementById('id').value
+         name = document.getElementById('name').value
+         phone = document.getElementById('phone').value
+         email = document.getElementById('email').value
+         amount = document.getElementById('amount').value
+         item_name = document.getElementById('modal-item-name').firstChild.textContent
+
+         if (validate(id, name, phone, email, amount)) {
+
+            $.post("https://auction.imperialcharityweek.co.uk/endpoints/bid.php",
+               {
+                  id: parseInt(id),
+                  name: name,
+                  phone: phone,
+                  email: email,
+                  amount: parseFloat(amount).toFixed(2),
+                  item_name: item_name
+               },
+               function (data, status) {
+                  if (data == "low-bid") {
+                     $("#amount-helper").attr("data-error", "Your bid is too low");
+                     $("#amount").addClass("invalid");
+                     $("#amount-helper").removeClass("hide");
+                  } else {
+                     clearForm();
+                     $('#modal-form').modal('close');
+                     $('#modal-success').modal('open');
+                  }
+               });
+         }
+         getAmounts(false);
+      }
+   </script>
+</body>
+
+</html>

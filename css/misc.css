@@ -1,0 +1,134 @@
+.social:hover {
+   /* font-size: 105%; */
+   margin-left: 8px;
+   transition: 0.2s;
+   color: white !important;
+}
+
+.email {
+   color: #1e88e5;
+   transition: 0.4s;
+}
+
+.email:hover {
+   color: #f57c00;
+   transition: 0.25s;
+}
+
+.social {
+   font-size: 16px !important;
+   transition: 0.25s;
+}
+
+.copyright-link:hover {
+   font-size: 105%;
+   transition: 0.2s;
+}
+
+.copyright-link {
+   transition: 0.2s;
+}
+
+body {
+   opacity: 1;
+   transition: 1s opacity;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+body.fade {
+   opacity: 0;
+   transition: none;
+}
+
+p {
+   font-size: 16px !important;
+ }
+
+main {
+   flex: 1 0 auto;
+}
+
+.parallax-container {
+   height: 550px;
+}
+
+.caption {
+   margin-top: 140px;
+}
+
+.event,
+.auction-item {
+   margin-bottom: 20px;
+   display: flex;
+   cursor:pointer;
+}
+
+.fixed-height-row,
+.event-container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: stretch
+}
+
+.fixed-height-col {
+   display: flex;
+}
+
+@media only screen and (min-width: 900px) {
+   .event-photos {
+      height: 33vw;
+      max-height: 33vw;
+   }
+}
+
+@media only screen and (max-width: 900px) {
+   .event-photos {
+      max-height: 36vh;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .event-photos {
+      max-height: 30vh;
+   }
+}
+
+@media only screen and (max-width: 700px) and (orientation: landscape) {
+   .event-photos {
+      max-height: 40vw;
+   }
+}
+
+.image-text {
+   text-shadow: 1px 2px 8px #000;
+}
+
+/* 
+
+Source: https://stackoverflow.com/questions/37127123/change-color-of-underline-input-and-label-in-materialize-css-framework
+
+Credit: dippas, manuman94 and let’s yo
+
+*/
+
+.material-icons.active {
+   color: #1e88e5 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label,
+.input-field input[type=email]:focus+label,
+.materialize-textarea:focus:not([readonly])+label {
+   color: #1e88e5 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.materialize-textarea:focus:not([readonly]) {
+   border-bottom: 1px solid #1e88e5 !important;
+   box-shadow: 0 1px 0 0 #1e88e5 !important;
+}

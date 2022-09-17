@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>CW Auction bids</title>
+</head>
+
+<body>
+
+   <div>
+      <p id="content"></p>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+   <script>
+      $(document).ready(function () {
+         let passphrase = prompt('Enter secret passphrase');
+         if (passphrase != "") {
+            getAmounts(passphrase);
+         }
+      });
+
+      function writeToPage(data) {
+         try {
+            for (var i = 0; i < 20; i++) {
+               $("#content").append("<h3 id=" + i + "></h3>");
+               $("#content").append("Item id: " + data[i]["id"] + "<br>");
+               $("#content").append("Name: " + data[i]["name"] + "<br>");
+               $("#content").append("Current bid: £" + parseFloat(data[i]["amount"]).toFixed(2) + "<br>");
+               $("#content").append("Phone number: " + data[i]["phone"] + "<br>");
+               $("#content").append("Email: " + data[i]["email"] + "<br>");
+               $("#content").append("<br>");
+               document.getElementById(i).innerHTML = "Item: " + data[i]["item"];
+            }
+         } catch (error) {
+            console.log(error);
+         }
+      }
+
+      function getAmounts(passphrase) {
+         $.ajax({
+            url: "https://auction.imperialcharityweek.co.uk/endpoints/get-data.php",
+            type: "get",
+            data: {
+               passphrase: passphrase
+            },
+            success: function (response) {
+               console.log(response);
+               writeToPage(JSON.parse(response));
+            },
+            error: function (xhr) {
+               console.log(xhr);
+            }
+         });
+      }
+
+   </script>
+
+</body>
+
+</html>
